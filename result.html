@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SFI-KZ нәтижесі</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+@media print{
+
+button{
+display:none;
+}
+
+header{
+display:none;
+}
+
+body{
+background:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<div class="logo-circle">
+🛡️
+</div>
+
+<div>
+
+<h2>SafeFinanceAI</h2>
+
+<small>Қаржылық алаяқтыққа қарсы интеллектуалды платформа</small>
+
+</div>
+
+</div>
+<nav class="top-menu">
+
+<a href="dashboard.html">🏠 Басты бет</a>
+
+<a href="test.html">📝 Тест</a>
+
+<a href="result.html">📊 Нәтиже</a>
+
+<a href="ai.html">🤖 AI</a>
+
+<a href="simulator.html">🎭 Simulator</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+</nav>
+
+</header>
+
+
+<div class="result-container">
+
+<h1 class="result-title">
+
+SFI-KZ ЗЕРТТЕУ НӘТИЖЕСІ
+<div class="report-header">
+
+<h2>SafeFinanceAI ғылыми бағалау есебі</h2>
+
+<p>
+Жасөспірімдердің қаржылық алаяқтыққа қарсы
+сауаттылық деңгейін бағалау нәтижесі
+</p>
+
+</div>
+
+</h1>
+
+
+<div id="resultCard">
+    <div class="user-info">
+
+<h3>👤 Қатысушы туралы мәлімет</h3>
+
+<p><b>Аты-жөні:</b> <span id="userName"></span></p>
+
+<p><b>Жасы:</b> <span id="userAge"></span></p>
+
+<p><b>Сыныбы:</b> <span id="userClass"></span></p>
+
+</div>
+
+<hr>
+
+<div class="circle-score">
+
+<h2 id="percent">0%</h2>
+
+</div>
+
+<h2 id="riskLevel">
+...
+</h2>
+
+<p id="advice">
+...
+</p>
+
+
+<h2 class="analysisTitle">
+
+📊 Ғылыми талдау
+
+</h2>
+
+
+<div class="score-row">
+
+<div class="score-name">
+
+📘 FK
+
+</div>
+
+<div class="score-bar">
+
+<div class="bar-fill fkBar" id="fkBar"></div>
+
+</div>
+
+<div class="score-value" id="fkResult">
+
+0%
+
+</div>
+
+</div>
+
+
+
+<div class="score-row">
+
+<div class="score-name">
+
+🔍 FR
+
+</div>
+
+<div class="score-bar">
+
+<div class="bar-fill frBar" id="frBar"></div>
+
+</div>
+
+<div class="score-value" id="frResult">
+
+0%
+
+</div>
+
+</div>
+
+
+
+<div class="score-row">
+
+<div class="score-name">
+
+🧠 DB
+
+</div>
+
+<div class="score-bar">
+
+<div class="bar-fill dbBar" id="dbBar"></div>
+
+</div>
+
+<div class="score-value" id="dbResult">
+
+0%
+
+</div>
+
+</div>
+
+
+
+<div class="score-row">
+
+<div class="score-name">
+
+🛡️ CS
+
+</div>
+
+<div class="score-bar">
+
+<div class="bar-fill csBar" id="csBar"></div>
+
+</div>
+
+<div class="score-value" id="csResult">
+
+0%
+
+</div>
+
+</div>
+
+
+
+<div class="sfi-box">
+
+Жалпы SFI-KZ индексі
+
+<h2 id="sfiIndex">
+
+0%
+
+</h2>
+
+</div>
+
+
+
+<div class="ai-box">
+
+<h2>
+
+🤖 AI қорытындысы
+
+</h2>
+
+<p id="aiResult">
+
+...
+
+</p>
+
+</div>
+<div class="analysis-box">
+
+<h2>📊 Ғылыми интерпретация</h2>
+
+<p id="scienceResult">
+
+...
+
+</p>
+
+</div>
+
+<div class="research-box">
+
+<h2>📌 Зерттеу қорытындысы</h2>
+
+<p>
+
+Бұл нәтиже SafeFinanceAI платформасының авторлық
+<b>SFI-KZ</b> математикалық моделі арқылы есептелді.
+
+Бағалау төрт негізгі бағыт бойынша жүргізілді:
+
+</p>
+
+<ul>
+
+<li>📘 Қаржылық білім (FK)</li>
+
+<li>🔍 Алаяқтықты тану (FR)</li>
+
+<li>🧠 Шешім қабылдау (DB)</li>
+
+<li>🛡️ Киберқауіпсіздік (CS)</li>
+
+</ul>
+
+<p>
+
+Барлық нәтижелер интеллектуалды алгоритм арқылы өңделіп,
+қатысушының қаржылық қауіпсіздік деңгейі анықталды.
+
+
+<p>
+
+Алынған нәтижелер қатысушының қаржылық алаяқтыққа қарсы
+сауаттылық деңгейін ғылыми негізде бағалауға мүмкіндік береді.
+
+</p>
+
+</div>
+
+
+<button onclick="window.location='test.html'">
+
+Тестті қайта тапсыру
+</button>
+<button id="downloadPdf">
+
+📄 PDF есепті жүктеу
+</button>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="results.js"></script>
+
+</body>
+
+</html>

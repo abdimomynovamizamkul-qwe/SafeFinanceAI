@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SafeFinanceAI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<div class="logo-circle">
+
+🛡️
+
+</div>
+
+<div>
+
+<h2>SafeFinanceAI</h2>
+
+<small>Қаржылық қауіпсіздік платформасы</small>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+SafeFinanceAI платформасына қош келдіңіз
+
+</h1>
+
+<p>
+
+Жасөспірімдердің қаржылық алаяқтыққа қарсы сауаттылығын бағалау және дамыту платформасы.
+
+</p>
+<div class="user-form">
+
+<input
+type="text"
+id="fullName"
+placeholder="Аты-жөніңіз">
+
+<input
+type="number"
+id="age"
+placeholder="Жасыңыз">
+
+<input
+type="text"
+id="schoolClass"
+placeholder="Сыныбы (мысалы: 10А)">
+
+</div>
+<div class="menu-grid">
+
+<button onclick="saveUserInfo()">
+
+📝 Тестті бастау
+
+</button>
+
+<button onclick="location.href='result.html'">
+
+📊 Нәтиже
+
+</button>
+
+<button onclick="location.href='ai.html'">
+
+🤖 AI Кеңесші
+
+</button>
+
+<button onclick="location.href='simulator.html'">
+
+🎭 Scam Simulator
+
+</button>
+
+<button onclick="location.href='analytics.html'">
+
+📈 Analytics
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<section class="about-project">
+
+<h2>📖 Жоба туралы</h2>
+
+<p>
+
+<b>SafeFinanceAI</b> – жасөспірімдердің қаржылық алаяқтыққа қарсы
+сауаттылық деңгейін бағалауға арналған интеллектуалды платформа.
+
+Платформа авторлық <b>SFI-KZ</b> индексі негізінде жұмыс істейді және
+AI технологиялары арқылы әр қатысушының білім деңгейін талдайды.
+
+</p>
+
+</section>
+
+<section class="innovation">
+
+<h2>🔬 Ғылыми жаңалығы</h2>
+
+<ul>
+
+<li>Авторлық <b>SFI-KZ</b> бағалау индексі әзірленді.</li>
+
+<li>Қаржылық сауаттылық 4 ғылыми бағыт бойынша бағаланады.</li>
+
+<li>Жасанды интеллект жеке қорытынды мен ұсыныс береді.</li>
+
+<li>Scam Simulator тәжірибелік оқытуға мүмкіндік береді.</li>
+
+<li>Analytics бөлімі нәтижелерді ғылыми түрде талдайды.</li>
+
+</ul>
+
+</section>
+<script>
+
+function saveUserInfo(){
+
+localStorage.setItem(
+"fullName",
+document.getElementById("fullName").value
+);
+
+localStorage.setItem(
+"age",
+document.getElementById("age").value
+);
+
+localStorage.setItem(
+"schoolClass",
+document.getElementById("schoolClass").value
+);
+
+window.location.href="test.html";
+
+}
+
+</script>
+</body>
+
+</html>
