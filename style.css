@@ -663,3 +663,49 @@ line-height:1.8;
 padding-left:25px;
 
 }
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.shield{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:#0d6efd;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:100px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+nav{
+    margin-top:15px;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0d47a1;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#1565c0;
+}
