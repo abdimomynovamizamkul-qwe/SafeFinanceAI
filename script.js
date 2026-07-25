@@ -48,7 +48,6 @@ function renderQuestions() {
                     ${answer}
                 </label>
             `;
-
         });
 
         block.innerHTML = html;
@@ -70,8 +69,8 @@ function renderQuestions() {
     });
 
     updateProgress();
-
 }
+
 function updateProgress() {
 
     const total = getCurrentQuestions().length;
@@ -90,54 +89,56 @@ function updateProgress() {
         percent + "% аяқталды";
 
 }
+if (nextSection) {
+    nextSection.addEventListener("click", function () {
 
-nextSection.addEventListener("click", function () {
+        if (currentSection === "FK") {
 
-    if (currentSection === "FK") {
+            currentSection = "FR";
 
-        currentSection = "FR";
+        } else if (currentSection === "FR") {
 
-    } else if (currentSection === "FR") {
+            currentSection = "DB";
 
-        currentSection = "DB";
+        } else if (currentSection === "DB") {
 
-    } else if (currentSection === "DB") {
+            currentSection = "CS";
 
-        currentSection = "CS";
+        } else {
 
-    } else {
+            alert("Барлық бөлім аяқталды.");
+            return;
 
-        alert("Барлық бөлім аяқталды.");
-        return;
+        }
 
-    }
+        renderQuestions();
 
-    renderQuestions();
+    });
+}
 
-});
 
-renderQuestions();
-nextBtn.addEventListener("click", function () {
+if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
 
-    const result = calculateResults(userAnswers);
+        const result = calculateResults(userAnswers);
 
-    const risk = getRiskLevel(result.SFI_KZ);
+        const risk = getRiskLevel(result.SFI_KZ);
 
-    localStorage.setItem("percent", result.SFI_KZ);
-    localStorage.setItem("SFI_KZ", result.SFI_KZ);
+        localStorage.setItem("percent", result.SFI_KZ);
+        localStorage.setItem("SFI_KZ", result.SFI_KZ);
 
-    localStorage.setItem("FK", result.FK);
-    localStorage.setItem("FR", result.FR);
-    localStorage.setItem("DB", result.DB);
-    localStorage.setItem("CS", result.CS);
+        localStorage.setItem("FK", result.FK);
+        localStorage.setItem("FR", result.FR);
+        localStorage.setItem("DB", result.DB);
+        localStorage.setItem("CS", result.CS);
 
-    localStorage.setItem("riskLevel", risk.level);
-    localStorage.setItem("advice", risk.advice);
+        localStorage.setItem("riskLevel", risk.level);
+        localStorage.setItem("advice", risk.advice);
 
-    window.location.href = "result.html";
+        window.location.href = "result.html";
 
-});
-
+    });
+}
 function calculateResults(userAnswers) {
 
     let sectionScores = {
@@ -195,6 +196,8 @@ function calculateResults(userAnswers) {
     };
 
 }
+
+
 function getRiskLevel(score) {
 
     if (score >= 80) {
@@ -204,27 +207,33 @@ function getRiskLevel(score) {
             advice: "Сіз қаржылық алаяқтықтан жақсы қорғана аласыз. Біліміңіз жоғары."
         };
 
-    } else if (score >= 60) {
+    }
+
+    if (score >= 60) {
 
         return {
             level: "🟡 ОРТАША ТӘУЕКЕЛ",
-            advice: "Қауіпсіздік деңгейіңіз орташа. Күмәнді хабарламалар мен сілтемелерді мұқият тексеріңіз."
-        };
-
-    } else if (score >= 40) {
-
-        return {
-            level: "🟠 ЖОҒАРЫ ТӘУЕКЕЛ",
-            advice: "Қаржылық қауіпсіздік бойынша біліміңізді арттыру қажет. AI кеңесші бөлімін пайдаланыңыз."
-        };
-
-    } else {
-
-        return {
-            level: "🔴 ӨТЕ ЖОҒАРЫ ТӘУЕКЕЛ",
-            advice: "Сіз алаяқтардың құрбаны болу қаупі жоғары топтасыз. Платформадағы оқу материалдарын оқып, тестті қайта тапсыру ұсынылады."
+            advice: "Қауіпсіздік деңгейіңіз орташа."
         };
 
     }
 
+    if (score >= 40) {
+
+        return {
+            level: "🟠 ЖОҒАРЫ ТӘУЕКЕЛ",
+            advice: "Қаржылық қауіпсіздік бойынша біліміңізді арттыру қажет."
+        };
+
+    }
+
+    return {
+
+        level: "🔴 ӨТЕ ЖОҒАРЫ ТӘУЕКЕЛ",
+        advice: "Платформадағы оқу материалдарын қарап, тестті қайта тапсыру ұсынылады."
+
+    };
+
 }
+
+renderQuestions();
